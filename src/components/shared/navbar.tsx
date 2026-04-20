@@ -1,31 +1,38 @@
 "use client";
+import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
-export default function Navbar() {
+const Navbar = () => {
   return (
-    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-4xl">
-      <div className="bg-slate-900/40 backdrop-blur-md border border-slate-800/50 rounded-2xl px-6 py-3 flex items-center justify-between shadow-2xl">
-        <Link href="/" className="group flex items-center gap-2">
-          <div className="h-6 w-6 bg-blue-600 rounded-md flex items-center justify-center font-bold text-[10px] text-white">
-            P
-          </div>
-          <span className="text-sm font-bold tracking-widest uppercase group-hover:text-blue-500 transition-colors text-white">
-            Prince <span className="text-slate-500 font-light italic text-[10px]">v3</span>
-          </span>
+    <motion.nav 
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      className="fixed top-6 left-1/2 -translate-x-1/2 z-[100] w-[95%] max-w-[600px]"
+    >
+      <div className="bg-white/[0.03] backdrop-blur-[20px] border border-white/[0.08] rounded-full px-6 py-3 flex items-center justify-between shadow-2xl">
+        <Link href="/" className="text-white font-black tracking-tighter text-lg">
+        P
         </Link>
-
-        <div className="flex gap-8 items-center">
-          <Link href="#projects" className="text-[10px] font-bold text-slate-400 hover:text-slate-100 transition-all uppercase tracking-[0.2em]">
-            Systems
-          </Link>
-          <Link href="#stack" className="text-[10px] font-bold text-slate-400 hover:text-slate-100 transition-all uppercase tracking-[0.2em]">
-            Stack
-          </Link>
-          <Link href="#connect" className="bg-white text-black px-4 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-tighter hover:bg-blue-600 hover:text-white transition-all">
-            Connect
-          </Link>
+        
+        <div className="flex items-center gap-6">
+          {['Projects', 'Stack', 'Contact'].map((item) => (
+            <Link 
+              key={item} 
+              href={`#${item.toLowerCase()}`}
+              className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors"
+            >
+              {item}
+            </Link>
+          ))}
         </div>
+
+        <button className="bg-white text-black text-[10px] font-black px-4 py-2 rounded-full hover:scale-105 transition-transform uppercase">
+          Hire
+        </button>
       </div>
-    </nav>
+    </motion.nav>
   );
-}
+};
+
+export default Navbar;
