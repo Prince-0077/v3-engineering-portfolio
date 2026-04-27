@@ -72,8 +72,8 @@ export default function Home() {
 
           <motion.div 
             variants={itemVariants}
-            className="md:col-span-2 bg-white/[0.03] backdrop-blur-[30px] border border-white/[0.1] rounded-[2.5rem] p-8 overflow-hidden flex flex-col justify-center shadow-2xl"
-          >
+            className="md:col-span-2 bg-white/[0.03] backdrop-blur-[30px] border border-white/[0.1] rounded-[2.5rem] p-8 overflow-hidden flex flex-col justify-center shadow-2xl">
+          
             <h3 className="text-[11px] font-black uppercase tracking-[0.5em] text-white/40 mb-12 pl-1">SYSTEM_CORE_v3</h3>
             <div className="relative flex overflow-hidden group py-4">
               
@@ -82,8 +82,8 @@ export default function Home() {
                 className="flex whitespace-nowrap gap-16 pr-16" 
                 animate={{ x: ["0%", "-100%"] }} 
                 transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                style={{ willChange: "transform" }}
-              >
+                style={{ willChange: "transform" }}>
+              
                 {TECH_STACK.map((tech, i) => (
                   <span key={i} className="text-3xl font-bold text-white/[0.15] hover:text-white transition-all duration-500 cursor-default font-mono tracking-tighter uppercase">
                     {tech}
@@ -96,8 +96,8 @@ export default function Home() {
                 animate={{ x: ["0%", "-100%"] }} 
                 transition={{ duration: 40, repeat: Infinity, ease: "linear" }} 
                 aria-hidden="true"
-                style={{ willChange: "transform" }}
-              >
+                style={{ willChange: "transform" }}>
+              
                 {TECH_STACK.map((tech, i) => (
                   <span key={`dup-${i}`} className="text-3xl font-bold text-white/[0.15] hover:text-white transition-all duration-500 cursor-default font-mono tracking-tighter uppercase">
                     {tech}
@@ -115,8 +115,8 @@ export default function Home() {
             <motion.div 
               variants={itemVariants}
               whileHover={{ y: -8, borderColor: "rgba(255,255,255,0.3)" }}
-              className="h-full bg-white/[0.03] backdrop-blur-[30px] border border-white/[0.1] rounded-[2.5rem] p-8 relative overflow-hidden group cursor-pointer transition-all duration-500 shadow-2xl"
-            >
+              className="h-full bg-white/[0.03] backdrop-blur-[30px] border border-white/[0.1] rounded-[2.5rem] p-8 relative overflow-hidden group cursor-pointer transition-all duration-500 shadow-2xl">
+            
               <div className="h-2 w-2 rounded-full bg-white/40 mb-6 group-hover:bg-white group-hover:scale-125 transition-all" />
               <h3 className="text-xl font-bold text-white mb-3 tracking-tight">Interview Salah</h3>
               <p className="text-sm text-white/50 font-light leading-relaxed">AI-driven interview synthesis & behavior analysis engine.</p>
@@ -156,73 +156,9 @@ export default function Home() {
         </section>
       </motion.div>
 
-<section className="py-20 border-t border-white/[0.05] mt-20 px-6 max-w-6xl mx-auto">
-  
-  
-  <div className="flex items-center gap-4 mb-12 opacity-20">
-    <div className="h-[1px] w-12 bg-white" />
-    <span className="text-[10px] font-mono tracking-[0.5em] uppercase text-white">
-      Debug_Notes
-    </span>
-  </div>
 
- 
-  <div className="space-y-12">
-    
-   
-    <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-      <div className="md:col-span-2">
-        <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest">#DOC_01</span>
-      </div>
-      <div className="md:col-span-10">
-        <h4 className="text-[14px] text-white/80 font-medium mb-2 uppercase tracking-tight">Mermaid Syntax Optimization</h4>
-        <p className="text-[13px] text-white/40 leading-relaxed max-w-2xl font-light">
-          Resolved rendering errors in GitHub-flavored Markdown. Optimized spacing for recursive system design diagrams.
-        </p>
-      </div>
-    </div>
 
- 
-    <div className="grid grid-cols-1 md:grid-cols-12 gap-4 opacity-70">
-      <div className="md:col-span-2">
-        <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest">#DEBUG_01</span>
-      </div>
-      <div className="md:col-span-10">
-        <h4 className="text-[14px] text-white/80 font-medium mb-2 uppercase tracking-tight">Oklab Interpolation Patch</h4>
-        <p className="text-[13px] text-white/40 leading-relaxed max-w-2xl font-light">
-          Fixed Framer Motion color-space warnings. Migrated animation constants to Hex-Alpha format for performance.
-        </p>
-      </div>
-    </div>
 
-    
-    <div className="grid grid-cols-1 md:grid-cols-12 gap-4 opacity-40">
-      <div className="md:col-span-2">
-        <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest">#ARCH_01</span>
-      </div>
-      <div className="md:col-span-10">
-        <h4 className="text-[14px] text-white/80 font-medium mb-2 uppercase tracking-tight">Multi-Repo Decoupling</h4>
-        <p className="text-[13px] text-white/40 leading-relaxed max-w-2xl font-light">
-          Decoupled &quot;Interview Salah&quot; engine from portfolio UI to establish a scalable service-oriented structure.
-        </p>
-      </div>
-    </div>
-
-  
-    <div className="grid grid-cols-1 md:grid-cols-12 gap-4 opacity-20">
-      <div className="md:col-span-2">
-        <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest">#PERF_01</span>
-      </div>
-      <div className="md:col-span-10">
-        <h4 className="text-[14px] text-white/80 font-medium mb-2 uppercase tracking-tight">Hardware Acceleration</h4>
-        <p className="text-[13px] text-white/40 leading-relaxed max-w-2xl font-light italic">
-          Initialized GPU layer promotion for marquee components. Reduced main-thread load.
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
 
     </div>
   );
