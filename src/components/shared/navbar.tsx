@@ -26,9 +26,12 @@ const Navbar = () => {
             ))}
         </div>
 
-        <button className="bg-white text-black text-[10px] font-black px-4 py-2 rounded-full hover:scale-105 transition-transform uppercase">
-          Hire
-              </button>
+      <Link 
+        href="#contact"
+        className="bg-white text-black text-[10px] font-bold px-5 py-2 rounded-full hover:bg-black hover:text-white border border-transparent hover:border-white/20 transition-all duration-300 uppercase tracking-widest text-center"
+      >
+        Hire
+      </Link>
             </div>
     </motion.nav>
   );
