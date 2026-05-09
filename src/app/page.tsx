@@ -311,8 +311,8 @@ export default function Home() {
 
       <div className="grid grid-cols-1 gap-4">
         {[
-          { label: "LinkedIn", url: "https://linkedin.com/in/yourprofile", sub: "Professional_Network" },
-          { label: "GitHub", url: "https://github.com/yourprofile", sub: "Source_Control" }
+          { label: "LinkedIn", url: "https://www.linkedin.com/in/prince-pandey-078a0a33a/", sub: "Professional_Network" },
+          { label: "GitHub", url: "https://github.com/Prince-0077", sub: "Source_Control" }
         ].map((link, idx) => (
           <Link 
             key={idx}
