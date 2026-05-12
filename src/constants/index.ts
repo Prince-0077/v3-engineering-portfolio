@@ -1,5 +1,5 @@
 
-
+import { Easing } from "framer-motion";
 
 export const BIO_TEXTS = [
     "Second-year B.Tech student building high-performance AI-native applications.",
@@ -14,3 +14,4 @@ export const TECH_STACK = [
   "PostgreSQL", "Prisma", "Docker", "Vercel AI SDK"
 ];
 
+export const MECH_EASE = [0.23, 1, 0.32, 1] as const;

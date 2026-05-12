@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, } from "framer-motion";
+import { MECH_EASE } from "@/constants";
 
-const MECH_EASE = [0.23, 1, 0.32, 1];
 
 const Navbar = () => {
   return (
@@ -21,8 +21,8 @@ const Navbar = () => {
         
         
         <div className="hidden md:flex items-center gap-12">
-          {[{ label: 'REGISTRY', href: '#registry' },
-            { label: 'LAB', href: '#projects' },
+          {[{ label: 'REGISTRY', href: '#projects' },
+            { label: 'LAB', href: '#lab' },
             { label: 'STACK', href: '#stack' },
           ].map((item) => (
             <Link 

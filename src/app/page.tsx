@@ -1,13 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
-import { motion, Variants, AnimatePresence } from "framer-motion";
-import { BIO_TEXTS, TECH_STACK } from "@/constants";
+import { motion, AnimatePresence } from "framer-motion";
+import { BIO_TEXTS, TECH_STACK,   } from "@/constants";
 import Link from "next/link";
-
+import { MECH_EASE } from "@/constants";
 
 
 export default function Home() {
-  const [textIndex, setTextIndex] = useState(0);
+    const [textIndex, setTextIndex] = useState(0);
 
   useEffect(() => {
   
@@ -17,168 +17,144 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
-  };
-
-  const itemVariants: Variants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
-  };
-
   return (
     <div className="relative min-h-screen bg-[#050505] selection:bg-white/20">
       
-     
-      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-white/[0.02] rounded-full blur-[130px]" />
-      </div>
-
-      <motion.div className="pb-20 pt-10 px-4 md:px-10" initial="hidden" animate="visible" variants={containerVariants}>
-        <section className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-5 h-full md:min-h-[85vh]">
-          
+    <section className="relative mb-40 border border-white/5 bg-white/[0.01] p-1 md:p-2">
          
-          <motion.div 
-            variants={itemVariants}
-            className="md:col-span-2 md:row-span-2 bg-white/[0.03] backdrop-blur-[30px] border border-white/[0.1] 
-            rounded-[2.5rem] p-10 flex flex-col justify-start pt-16 group hover:border-white/[0.2] transition-all 
-            duration-700 relative overflow-hidden shadow-2xl">
-          
-            <div className="relative z-10 space-y-6">
-                      <h1 className="text-5xl md:text-7xl font-bold tracking-[-0.04em] text-white leading-none">
-                        Prince <span className="text-white/30 font-light italic tracking-tight ml-1">Pandey</span>
-              </h1>
-              
-                        <div className="h-28 md:h-32 relative mt-10">
-                          <AnimatePresence mode="wait">
-                            <motion.p
-                    key={textIndex}
-                    initial={{ opacity: 0, y: 10 }} 
 
+          <div className="absolute top-0 left-0 w-10 h-[1px] bg-white/20" />
+          <div className="absolute top-0 left-0 w-[1px] h-10 bg-white/20" />
+          <div className="absolute bottom-0 right-0 w-10 h-[1px] bg-white/20" />
+          <div className="absolute bottom-0 right-0 w-[1px] h-10 bg-white/20" />
+
+         
+          <div className="w-full flex justify-between items-center py-6 px-8 border-b border-white/5">
+            <div className="flex items-center gap-4">
+              <span className="text-[10px] font-mono text-white/20 uppercase tracking-[0.4em]">REF_ID: 2026_PRNC</span>
+              <div className="h-[1px] w-8 bg-white/10" />
+              <span className="text-[10px] font-mono text-emerald-500/60 uppercase tracking-[0.4em]">Active_Revision</span>
+            </div>
+            <span className="text-[10px] font-mono tracking-[0.4em] text-white/20 uppercase">2024.1 — 2026.12</span>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-center justify-between p-8 md:p-16 gap-16">
+            
+           
+            <div className="flex flex-col items-start space-y-32 w-full md:w-1/2">
+              <div className="space-y-4">
+                <div className="flex gap-4 text-[12px] font-mono text-white/30 tracking-[0.5em] uppercase">
+                  <span>DESIGN</span> / <span>SYSTEM</span> / <span>AI</span>
+                </div>
+                <h1 className="text-6xl md:text-[6rem] font-black italic tracking-tighter leading-[1] uppercase text-white">
+                  PRINCE<br /><hr className= "bg-white/20 h-[3px]"></hr> PANDEY <hr className="bg-white/20 h-[3px]"></hr>
+                </h1>
+                <div className="text-[10px] font-mono tracking-[1.2em] text-white/50 uppercase pt-4">
+                  PORTFOLIO_V3
+                </div>
+              </div>
+
+              
+              <div className="h-15 mt-[-90px] flex items-center border-l border-white/100 pl-6">
+                <AnimatePresence mode="wait">
+                  <motion.p
+                    key={textIndex}
+                    initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }} 
-                    transition={{ duration: 1, ease: "easeInOut" }} 
-                    className="text-white/70 text-lg md:text-xl max-w-md font-light leading-relaxed absolute top-0 left-0">
-                  
+                    exit={{ opacity: 0, y: -5 }}
+                    transition={{ duration: 1, ease: MECH_EASE }}
+                    className="text-white/80  text-[22px]  italic leading-relaxed uppercase"
+                  >
                     {BIO_TEXTS[textIndex]}
                   </motion.p>
                 </AnimatePresence>
               </div>
             </div>
-          </motion.div>
 
-          
+           
+           
+            <div className="relative w-full md:w-[400px] aspect-square border border-white/10 p-2 bg-white/[0.02]">
+              <div className="relative w-full h-full overflow-hidden grayscale contrast-125 hover:grayscale-0 transition-all duration-700">
+                {/* <Image 
+                  src="" 
+                  alt="" 
 
-
-
-
-          <motion.div 
-            variants={itemVariants}
-            className="md:col-span-2 bg-white/[0.03] backdrop-blur-[30px] border border-white/[0.1] 
-            rounded-[2.5rem] p-8 overflow-hidden flex flex-col justify-center shadow-2xl">
-          
-            <h3 className="text-[11px] font-black uppercase tracking-[0.5em] text-white/40 mb-12 pl-1">
-            SYSTEM_CORE_v3
-            </h3>
-            <div className="relative flex overflow-hidden group py-4">
-              
-             
-              <motion.div 
-                className="flex whitespace-nowrap gap-16 pr-16" 
-                animate={{ x: ["0%", "-100%"] }} 
-                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-
-                style={{ willChange: "transform" }}>
-              
-                        {TECH_STACK.map((tech, i) => (
-                  <span key={i} className="text-3xl font-bold text-white/[0.15] 
-                     hover:text-white transition-all duration-500 cursor-default font-mono 
-                     tracking-tighter uppercase">
-                    {tech}
-                  </span>
-                ))}
-              </motion.div>
-              
-              <motion.div 
-                className="flex whitespace-nowrap gap-16 pr-16" 
-                        animate={{ x: ["0%", "-100%"] }} 
-                        transition={{ duration: 40, repeat: Infinity, ease: "linear" }} 
-                        aria-hidden="true"
-                        style={{ willChange: "transform" }}>
-              
-                {TECH_STACK.map((tech, i) => (
-                             <span key={`dup-${i}`} className="text-3xl font-bold text-white/[0.15] hover:text-white transition-all 
-                             duration-500 cursor-default font-mono tracking-tighter uppercase">
-                    {tech}
-                  </span>
-                ))}
-                      </motion.div>
-                      </div>
-          </motion.div>
-
-
-
-        
-
-          <Link href="/interview-salah" className="md:col-span-1 block h-full">
-            <motion.div 
-              variants={itemVariants}
-              whileHover={{ y: -8, borderColor: "rgba(255,255,255,0.3)" }}
-              className="h-full bg-white/[0.03] backdrop-blur-[30px] border border-white/[0.1] rounded-[2.5rem] p-8 relative overflow-hidden group 
-              cursor-pointer transition-all duration-500 shadow-2xl">
-            
-              <div className="h-2 w-2 rounded-full bg-white/40 mb-6 group-hover:bg-white group-hover:scale-125 transition-all" />
-              <h3 className="text-xl font-bold text-white mb-3 tracking-tight">Interview Salah</h3>
-              <p className="text-sm text-white/50 font-light leading-relaxed">AI-driven interview synthesis & behavior analysis engine.</p>
-              <div className="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="text-white font-medium text-lg">↗</span>
+                  fill 
+                  priority
+                  className="object-cover opacity-70 hover:opacity-100 transition-opacity" 
+                /> */}
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/[0.01] to-transparent bg-[length:100%_3px] pointer-events-none" />
               </div>
-            </motion.div>
-          </Link>
+             
+              <div className="absolute -top-4 -right-4 h-12 w-12 bg-zinc-900 border border-white/10 rounded-full flex items-center justify-center text-[11px] text-white/40 font-mono z-20">
+                007
+              </div>
+            </div>
+          </div>
+
+        
+          <div className="w-full flex justify-between items-center py-6 px-8 border-t border-white/5 bg-white/[0.01]">
+            <span className="text-[9px] font-mono text-white/20 uppercase tracking-[0.4em]">STABLE_REVISION_v4.0</span>
+            <div className="hidden md:block h-[1px] flex-grow mx-12 bg-white/5" />
+            <span className="text-[9px] font-mono text-white/20 uppercase tracking-[0.4em]">AUTH_KEY: 0xPRNC_2026</span>
+          </div>
+        </section>
+
+
+<section id="stack" className="max-w-7xl mx-auto px-6 md:px-6 mb-50 mt-[-90px]">
+  <div className="flex items-center gap-6 mb-16 opacity-70">
+    <span className="text-[30px] font-mono tracking-[0.6em] uppercase text-white">
+      MY_Technical_Toolkit // v.2026
+    </span>
+    <div className="h-[1px] flex-grow bg-white" />
+  </div>
+
+  <div className="grid md:grid-cols-4  ap-px bg-white/[0.05]  border border-white/[0.1]">
+    {[
+      { 
+        category: "Core_Engineering", 
+        tools: ["React", "JavaScript (ES6+)", "Tailwind CSS", "HTML5/CSS3"] 
+      },
+      { 
+        category: "Backend_Logics", 
+        tools: ["Node.js", "Express", "Firebase", "REST APIs"] 
+      },
+      { 
+        category: "Exploring_Labs", 
+        tools: ["Gemini_API", "Agentic Workflows", "Vector_DBs"] 
+      },
+      { 
+        category: "System_Control", 
+        tools: ["Git/GitHub", "Vercel", "Linux_Basics", "Postman"] 
+      }
+    ].map((group, i) => (
+      <div key={i} className="bg-[#050505] p-10 group hover:bg-white/[0.02] transition-all">
+        <span className="text-[15px] font-mono text-white/20 uppercase tracking-widest block mb-6">
+          {group.category}
+        </span>
+        <ul className="space-y-3">
+          {group.tools.map((tool, tIndex) => (
+            <li key={tIndex} className="text-xl font-light text-white/40 group-hover:text-white transition-colors flex items-center gap-2">
+              <span className="w-2 h-2 bg-white/20 group-hover:bg-emerald-700 rounded-full transition-colors" />
+              {tool}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>
+       
 
         
 
 
-          <motion.div 
-            variants={itemVariants}
-            whileHover={{ y: -8, borderColor: "rgba(255,255,255,0.3)" }}
-            className="md:col-span-1 bg-white/[0.03] backdrop-blur-[30px] border border-white/[0.1] rounded-[2.5rem] p-8 relative overflow-hidden 
-            group cursor-pointer transition-all duration-500 shadow-2xl">
-          
-            <div className="h-2 w-2 rounded-full bg-white/40 mb-6 group-hover:bg-white group-hover:scale-125 transition-all" />
-            <h3 className="text-xl font-bold text-white mb-3 tracking-tight">Utility Tool</h3>
-            <p className="text-sm text-white/50 font-light leading-relaxed">High-performance asset processing & pipeline engine.</p>
-          </motion.div>
-
-         
-
-
-          <motion.div 
-            variants={itemVariants}
-            whileHover={{ scale: 0.99 }}
-            className="md:col-span-2 bg-white text-black rounded-[2.5rem] p-10 flex items-center justify-between group cursor-pointer 
-            shadow-[0_20px_60px_rgba(255,255,255,0.1)]">
-          
-            <h2 className="text-3xl font-bold italic tracking-tighter">Initiate_Collaboration.</h2>
-            <div className="h-14 w-14 bg-black text-white rounded-full flex items-center justify-center font-bold 
-            group-hover:translate-x-3 transition-transform duration-500 shadow-xl">
-              →
-            </div>
-          </motion.div>
-
-        </section>
-      </motion.div>
-
-
-
-
-<section id="projects" className="max-w-7xl  mx-auto px-6 md:px-12 mb-40">
+<section id="projects" className="max-w-7xl  mx-auto px-6 mt-[-90px] md:px-12 mb-20">
   
   
-      <div className="flex flex-col md:flex-row border-t border-white/100 md:items-end justify-between gap-6 mb-20">
+      <div className="flex flex-col md:flex-row border-t  border-white/100 md:items-end justify-between gap-6  mb-10">
         <div className="space-y-2  ">
-        <span className="text-[10px] font-mono tracking-[0.6em] uppercase text-white">
+        <span className="text-[20px]  font-mono tracking-[0.6em] uppercase text-white">
         Project_Registry // Revision_04
       </span>
       <h2 className="text-xl font-light italic tracking-tight text-white/100">
