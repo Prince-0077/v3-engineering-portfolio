@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { BIO_TEXTS, TECH_STACK,   } from "@/constants";
+import { BIO_TEXTS, } from "@/constants";
 import Link from "next/link";
 import { MECH_EASE } from "@/constants";
 
@@ -63,8 +63,8 @@ export default function Home() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -5 }}
                     transition={{ duration: 1, ease: MECH_EASE }}
-                    className="text-white/80  text-[22px]  italic leading-relaxed uppercase"
-                  >
+                    className="text-white/80  text-[22px]  italic leading-relaxed uppercase">
+                  
                     {BIO_TEXTS[textIndex]}
                   </motion.p>
                 </AnimatePresence>
@@ -149,7 +149,7 @@ export default function Home() {
         
 
 
-<section id="projects" className="max-w-7xl  mx-auto px-6 mt-[-90px] md:px-12 mb-20">
+<section id="projects" className="max-w-7xl mx-auto px-auto mt-[-90px] md:px-12 mb-20">
   
   
       <div className="flex flex-col md:flex-row border-t  border-white/100 md:items-end justify-between gap-6  mb-10">
