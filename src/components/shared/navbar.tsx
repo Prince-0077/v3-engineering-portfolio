@@ -5,6 +5,9 @@ import { motion, } from "framer-motion";
 import { MECH_EASE } from "@/constants";
 
 
+
+
+
 const Navbar = () => {
   return (
     <motion.nav 
