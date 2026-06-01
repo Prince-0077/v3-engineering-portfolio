@@ -1,8 +1,11 @@
+
+import { Easing } from "framer-motion";
+
 export const BIO_TEXTS = [
-  "Second-year B.Tech student building high-performance AI-native applications.",
-  "Focused on tactile minimalism and agentic web workflows.",
+    "Second-year B.Tech student building high-performance AI-native applications.",
+    "Focused on tactile minimalism and agentic web workflows.",
   "Exploring the intersection of deep design and full-stack architecture.",
-  "Currently developing the Interview Salah System and Pixel Utility Hub."
+  "Currentlydeveloping the Interview Salah System and Pixel Utility Hub."
 ];
 
 export const TECH_STACK = [
@@ -10,3 +13,5 @@ export const TECH_STACK = [
   "Framer Motion", "Node.js", "Express", "MongoDB", 
   "PostgreSQL", "Prisma", "Docker", "Vercel AI SDK"
 ];
+
+export const MECH_EASE = [0.23, 1, 0.32, 1] as const;
