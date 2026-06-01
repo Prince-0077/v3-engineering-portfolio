@@ -27,7 +27,7 @@ export default function Home() {
           <div className="absolute top-0 left-0 w-[1px] h-10 bg-white/20" />
           <div className="absolute bottom-0 right-0 w-10 h-[1px] bg-white/20" />
           <div className="absolute bottom-0 right-0 w-[1px] h-10 bg-white/20" />
-
+ 
          
           <div className="w-full flex justify-between items-center py-6 px-8 border-b border-white/5">
             <div className="flex items-center gap-4">
